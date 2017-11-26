@@ -1,0 +1,29 @@
+				{/* Card Avatar*/}
+				<div className="card-avatar">
+					<img className="avatarFoto" />
+				</div>
+
+				{/* Card Content*/}
+				<div className="card-content">
+					<div className="card-info">
+						<div className="card-title">
+							<div className="card-name">
+								Ms. Alfonzo Stoltenberg
+							</div>
+							<div className="card-mail">
+								keven@grady.net
+							</div>
+						</div>
+						<div className="card-body">
+							<div className="card-job">
+								Direct Implementation Producer
+							</div>
+							<div className="card-addr">
+								9138 Stiedemann Ports, Norvalville
+							</div>
+						</div>
+					</div>
+					<div className="card-select card-selected"><br/>
+						SKIP SELECTION
+					</div>
+				</div>
