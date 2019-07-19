@@ -1,6 +1,6 @@
 # Bravado quest
 
-You are suggested to implement a simple profile search application using Rails, webpacker, React + Redux. Expected technologies used are: ES6, CSS (with any pre/post processors), html.
+You are suggested to implement a simple profile search application using Rails, webpacker, Vue. Expected technologies used are: ES6, CSS (with any pre/post processors), html.
 
 ## Layout design
 
@@ -19,3 +19,4 @@ Please note, the default app state contains all profile cards. When user starts 
 * General SPA application performance, including searching, scrolling and highlighting speed.
 * HTML(JSX) and CSS quality
 * JS code quality
+* Search should be stateful (using browser url e.g. `/search/Boris`)
