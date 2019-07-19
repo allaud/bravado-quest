@@ -10,7 +10,7 @@ Can be found here: https://www.figma.com/file/PyncPYa1rpOxRooTdfvgxHRN/Bravado-Q
 
 ## Expected steps
 
-You are suggested to clone this repo and then implement HTML/JSX markup according to design above and a single page application based on React+Redux. Application should be running on a project root (`/`). The sample data to use inside application should be taken using AJAX call from the users endpoint (`/users`).
+You are suggested to clone this repo and then implement layout according to design above and a single page application based on Vue and its modules. Application should be running on a project root (`/`). The sample data to use inside application should be taken using AJAX call from the users endpoint (`/users`).
 
 Please note, the default app state contains all profile cards. When user starts typing, the results should be filtered in realtime, highlighting the matching string.
 
