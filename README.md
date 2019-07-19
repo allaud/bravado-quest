@@ -20,3 +20,5 @@ Please note, the default app state contains all profile cards. When user starts 
 * HTML(JSX) and CSS quality
 * JS code quality
 * Search should be stateful (using browser url e.g. `/search/Boris`)
+* Application should be published online for testing purposes 
+* Changes should be published in a fork
