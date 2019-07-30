@@ -2,6 +2,10 @@
 
 You are suggested to implement a simple profile search application using Rails, webpacker, Vue. Expected technologies used are: ES6, CSS (with any pre/post processors), html.
 
+## Working example
+
+Please check this link to see the app in action: https://monosnap.com/file/8MMGLomAM2yeBVC1cMITddunrKrKPe
+
 ## Layout design
 
 Can be found here: https://www.figma.com/file/PyncPYa1rpOxRooTdfvgxHRN/Bravado-Quest
@@ -20,5 +24,5 @@ Please note, the default app state contains all profile cards. When user starts 
 * HTML(JSX) and CSS quality
 * JS code quality
 * Search should be stateful (using browser url e.g. `/search/Boris`)
-* Application should be published online for testing purposes 
+* Application should be published online for testing purposes
 * Changes should be published in a fork
