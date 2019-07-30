@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+@import 'normalize.css/normalize.css';
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  /* BASE font-size for using rem
+  100% = 16px by default in browser, we set 62.5% = 10px for comfort */
+  font-size: 62.5%;
+}
+
+html,
+body,
+input {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

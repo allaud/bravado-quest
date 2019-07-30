@@ -1,0 +1,30 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "extends": ["prettier", "prettier/standard"],
+  "plugins": ["vue", "prettier"],
+  "rules": {
+    "quotes": [2, "single"],
+    "import/prefer-default-export": 0,
+    "prettier/prettier": "error",
+    "react/prefer-stateless-function": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "no-unused-expressions": 0,
+    "func-names": 0,
+    "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
+    "max-len": [
+      2,
+      120,
+      4,
+      {
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignorePattern": "^\\s*var\\s.+=\\s*require\\s*\\("
+      }
+    ],
+    "comma-dangle": 0
+  }
+}

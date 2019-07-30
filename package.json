@@ -1,9 +1,32 @@
 {
+  "name": "bravado-quest",
+  "private": true,
+  "scripts": {
+    "dev": "./bin/webpack-dev-server --watch --colors --progress",
+    "dev:original": "./bin/webpack --watch --colors --progress",
+    "eslint": "eslint ./app/javascript/**/*.js --fix",
+    "precommit": "prettier --write 'app/javascript/**/*.js' & npm run eslint"
+  },
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
-    "coffeescript": "1.12.7"
+    "normalize.css": "^8.0.1",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.1",
+    "vue-router": "^3.0.7",
+    "vue-template-compiler": "^2.6.10",
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "husky": "^3.0.2",
+    "prettier": "^1.18.2",
     "webpack-dev-server": "^2.9.4"
   }
 }
