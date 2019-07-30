@@ -52,7 +52,7 @@ export default {
 
 <style scoped>
   .user-card {
-    background:#EEEEEE;
+    background: var(--gallery);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -64,20 +64,25 @@ export default {
     &__image {
       width: 134px;
       line-height: 0;
-      background: #aaa;
+      background: var(--silver-chalice);
     }
 
     &__info {
       flex: 1;
-      padding: 10px 9px 19px 27px;
+      padding: 10px;
       overflow: hidden;
+
+      @media (min-width: 992px) {
+        padding: 10px 9px 19px 27px;
+      }
     }
 
     &__name {
       flex: 1;
       font-size: 2.4rem;
       line-height: 1.33;
-      color: rgba(0, 0, 0, 0.87);
+      max-width: 100%;
+      color: var(--black-1);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -87,7 +92,7 @@ export default {
       font-size: 1.4rem;
       line-height: 1.42;
       font-weight: bold;
-      color: rgba(0, 0, 0, 0.543846);
+      color: var(--black-2);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -96,7 +101,7 @@ export default {
     &__address {
       font-size: 1.4rem;
       line-height: 1.42;
-      color: rgba(0, 0, 0, 0.543846);
+      color: var(--black-2);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -104,22 +109,30 @@ export default {
 
     &__bio {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: flex-start;
+      overflow: hidden;
+
+      @media (min-width: 992px) {
+        flex-direction: row;
+      }
     }
 
     &__email {
-      margin-left: 10px;
       font-size: 1.4rem;
       line-height: 1.14;
-      color: rgba(0, 0, 0, 0.54);
+      color: var(--black-3);
+
+      @media (min-width: 992px) {
+        margin-left: 10px;
+      }
     }
 
     &__button {
       font-weight: 500;
       font-size: 1.4rem;
       line-height: 1.14;
-      color: #009688;
+      color: var(--persian-green);
       border: none;
       background: none;
       text-transform: uppercase;
@@ -130,11 +143,11 @@ export default {
     &__actions {
       margin: 3px -9px 0 -27px;
       padding: 14px 9px 0 27px;
-      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      border-top: 1px solid var(--black-4);
     }
 
     /deep/ &__hightlight {
-      background-color: yellow;
+      background-color: var(--yellow);
     }
   }
 </style>

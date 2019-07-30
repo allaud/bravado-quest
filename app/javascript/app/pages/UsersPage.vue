@@ -1,10 +1,10 @@
 <template>
-  <div class="user-page">
-    <div class="user-page__container">
-      <search class="user-page__item" @change="handleSearch" />
+  <div class="users-page">
+    <div class="users-page__container">
+      <search :value="filter" @change="handleSearch" />
       <loader v-if="loading" />
       <placeholder text="Nothing found, please try to change your searching criteria..." v-if="notFound" />
-      <users :users="users" :filter="filter" />
+      <users :users="users" :filter="filter" class="users-page__users" />
     </div>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
   computed: {
     ...mapState({
       loading: state => state.users.loading,
-      users: state => state.users.filtered.slice(0, 20),
+      users: state => state.users.filtered,
       filter: state => state.users.filter,
     }),
     notFound() {
@@ -51,22 +51,27 @@ export default {
 </script>
 
 <style scoped>
-  .user-page {
+  .users-page {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #EEEEEE;
+    background: var(--gallery);
 
     &__container {
-      background: #FFFFFF;
+      background: var(--white);
       padding: 19px 12px;
       width: 564px;
       max-width: 100%;
-      height: 90vh;
+      height: 100vh;
       position: relative;
-      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 992px) {
+        height: 90vh;
+      }
     }
 
     &__loader {
@@ -75,10 +80,9 @@ export default {
       text-align: center;
     }
 
-    &__item {
-      & + & {
-        margin-top: 21px;
-      }
+    &__users {
+      flex: 1;
+      overflow-y: auto;
     }
   }
 </style>
