@@ -1,6 +1,6 @@
 # Bravado quest
 
-You are suggested to implement a simple profile search application using Rails, webpacker, Vue. Expected technologies used are: ES6, CSS (with any pre/post processors), html.
+You are suggested to implement a simple profile search application using Rails, webpacker, Vue. Expected technologies used are: ES6, CSS (with any pre/post processors), html, SFC.
 
 ## Layout design
 
@@ -17,6 +17,7 @@ Please note, the default app state contains all profile cards. When user starts 
 ## The task highlights
 
 * General SPA application performance, including searching, scrolling and highlighting speed.
+* Quality of Vue single file components (SFC)
 * HTML(JSX) and CSS quality
 * JS code quality
 * Search should be stateful (using browser url e.g. `/search/Boris`)
