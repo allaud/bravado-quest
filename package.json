@@ -1,9 +1,33 @@
 {
+  "name": "bravado-quest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:fire-cracker/bravado-quest.git",
+  "author": "Oyedeji Peace <oyedejipeace@gmail.com>",
+  "scripts": {
+    "lint": "eslint ./app/javascript/**/*.js"
+  },
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
-    "coffeescript": "1.12.7"
+    "axios": "^0.21.0",
+    "coffeescript": "1.12.7",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.5",
+    "vue-router": "^3.4.9",
+    "vue-template-compiler": "^2.6.12",
+    "vue-virtual-scroller": "^1.0.0",
+    "vuex": "^3.6.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "prettier": "^1.18.2",
     "webpack-dev-server": "^2.9.4"
-  }
+  },
+  "license": "MIT"
 }
