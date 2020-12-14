@@ -1,17 +1,22 @@
-import axios from 'axios'
+import axios from 'axios';
 
 let actions = {
   SEARCH_USERS({ commit }, query) {
-    commit('SET_SEARCH_QUERY', query)
+    commit('SET_SEARCH_QUERY', query);
+  },
+  SET_LOADING({ commit }, state) {
+    commit('SET_LOADING', state);
   },
   async GET_USERS({ commit }) {
     try {
-      const { data } = await axios.get('/users.json')
-      commit('SET_USERS', data)
+      commit('SET_LOADING', true);
+      const { data } = await axios.get('/users.json');
+      commit('SET_USERS', data);
+      commit('SET_LOADING', false);
     } catch (error) {
-      console.log('error>>>>', error)
+      return error;
     }
   }
-}
+};
 
-export default actions
+export default actions;

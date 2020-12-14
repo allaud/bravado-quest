@@ -1,6 +1,6 @@
 let state = {
   users: [],
   searchQuery: '',
-  loading: false,
-}
-export default  state
+  loading: false
+};
+export default state;

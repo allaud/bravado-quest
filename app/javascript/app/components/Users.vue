@@ -1,42 +1,56 @@
 <template>
-  <div class="container users-wrapper">
-    <RecycleScroller page-mode :items="users" :item-size="200" item-height="420" class="scroller" keyField="name" v-slot="{ item }">
-        <User :user="item" class="item" />
-    </RecycleScroller>
-  </div>
+  <RecycleScroller
+    page-mode
+    :items="users"
+    :item-size="200"
+    item-height="420"
+    class="scroller"
+    keyField="name"
+    v-slot="{ item, index }"
+  >
+    <User
+      :user="item"
+      class="item"
+      :class="{ hightlight: selected === index }"
+      @click.native="selected = index"
+    />
+  </RecycleScroller>
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
-  import { RecycleScroller } from 'vue-virtual-scroller';
+import { mapGetters } from "vuex";
+import { RecycleScroller } from "vue-virtual-scroller";
 
-  import User from '../components/User'
+import User from "../components/User";
 
-  export default {
-    name: 'Users',
-    props: ['users'],
-    components: {
-      User,
-      RecycleScroller
-    }
-  }
+export default {
+  name: "Users",
+  props: ["users"],
+  components: {
+    User,
+    RecycleScroller,
+  },
+  data() {
+    return {
+      selected: null,
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
-  .users-wrapper {
-    flex-direction: column;
-    margin-top: 10%;
-    max-height: calc(100% - 20px);
+.scroller {
+  height: 100%;
+  width: 100%;
+}
 
-      .scroller {
-        height: 100%;
-        width: 100%;
-      }
-  
-      .item {
-        margin-top: 20px;
-        border: 1px solid;
-        border-radius: 2px;
-        background:#fafafa;
-      }
-  }
-  </style>
+.item {
+  margin-top: 20px;
+  border-radius: 2px;
+  background: #fafafa;
+  box-shadow: var(--box-shadow);
+}
+
+.hightlight {
+  border: 1px solid blue;
+}
+</style>
