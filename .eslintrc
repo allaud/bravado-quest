@@ -1,0 +1,107 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module"
+  },
+  "plugins": ["vue", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      1,
+      {
+        "trailingComma": "none",
+        "printWidth": 100,
+        "tabWidth": 2,
+        "arrowParens": "avoid",
+        "singleQuote": true,
+        "jsxBracketSameLine": true
+      }
+    ],
+    "eqeqeq": [1, "always"],
+    "no-undef": 0,
+    "no-console": 1,
+    "no-unused-vars": 0,
+    "no-mixed-operators": [
+      1,
+      {
+        "allowSamePrecedence": true
+      }
+    ],
+    "eol-last": [2, "always"],
+    "no-confusing-arrow": 0,
+    "arrow-parens": [2, "as-needed"],
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "arrow-body-style": [2, "as-needed"],
+    "no-extra-parens": [
+      "off",
+      "functions",
+      {
+        "conditionalAssign": false,
+        "nestedBinaryExpressions": false,
+        "enforceForArrowConditionals": false
+      }
+    ],
+    "no-unused-expressions": 1,
+    "vue/order-in-components": ["error", {
+      "order": [
+        "el",
+        "name",
+        "parent",
+        "functional",
+        ["delimiters", "comments"],
+        ["components", "directives", "filters"],
+        "extends",
+        "mixins",
+        "inheritAttrs",
+        "model",
+        ["props", "propsData"],
+        "data",
+        "computed",
+        "watch",
+        "LIFECYCLE_HOOKS",
+        "methods",
+        ["template", "render"],
+        "renderError"
+      ]
+    }],
+    "vue/html-closing-bracket-spacing": ["error", {
+      "startTag": "never",
+      "endTag": "never",
+      "selfClosingTag": "always"
+    }],
+    "import/no-unresolved": "off",
+    "no-param-reassign": 0,
+    "quote-props": ["error", "consistent"],
+    "vue/html-closing-bracket-newline": ["error", {
+      "singleline": "never",
+      "multiline": "never"
+    }],
+    "vue/script-indent": ["error", 2, {
+      "baseIndent": 0,
+      "switchCase": 1,
+      "ignores": []
+    }],
+    "vue/max-attributes-per-line": [2, {
+      "singleline": 1,
+      "multiline": {
+        "max": 1,
+        "allowFirstLine": false
+      }
+    }]
+  }
+}
