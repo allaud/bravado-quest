@@ -17,9 +17,6 @@ import Profile from './Profile';
 export default {
   name: 'ResultBox',
   components: { Profile },
-  created() {
-    this.getNextPage();
-  },
   props: {
     searchString: String,
     profiles: Array,

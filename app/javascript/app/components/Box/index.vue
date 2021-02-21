@@ -54,9 +54,7 @@ export default {
         });
     },
     loadMore() {
-      setTimeout(() => {
-        this.getNextPage();
-      }, 50);
+      setTimeout(() => this.getNextPage(), 50);
     },
   },
 };
