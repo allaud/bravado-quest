@@ -1,8 +1,13 @@
 import apiClient from './api-client';
 
-const PROFILE_URL = 'https://raw.githubusercontent.com/allaud/bravado-quest/master/app/views/welcome/users.json.erb';
+const PROFILE_URL = '/api/v1/profiles';
 
-export default function fetchProfiles() {
-  return apiClient.get(PROFILE_URL)
+export default function fetchProfiles(query, page = 0) {
+  return apiClient.get(PROFILE_URL, {
+    params: {
+      query,
+      page,
+    },
+  })
     .then(({ data }) => data);
 }

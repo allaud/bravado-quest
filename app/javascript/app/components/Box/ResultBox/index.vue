@@ -1,8 +1,8 @@
 <template>
-<div class="result-container" v-infinite-scroll="loadMore">
+<div class="result-container" v-infinite-scroll="onChangePage">
   <div class="results-wrapper">
     <Profile
-        v-for="profile in filteredProfiles"
+        v-for="profile in profiles"
         :key="profile.email"
         :profile="profile"
         :highlight-text="searchString"
@@ -15,56 +15,16 @@
 import fetchProfiles from 'app/api/profiles';
 import Profile from './Profile';
 
-const PROFILES_PER_PAGE = 20;
-
 export default {
   name: 'ResultBox',
   components: { Profile },
   created() {
-    this.fetchData();
-  },
-  data() {
-    return {
-      page: 1,
-      renderedProfiles: [],
-      allProfiles: [],
-    };
+    this.getNextPage();
   },
   props: {
     searchString: String,
-  },
-  computed: {
-    filteredProfiles() {
-      if (this.searchString) {
-        return this.renderedProfiles.filter((profile) => this.searchStringFoundInProfile(
-          profile,
-          this.searchString,
-        ));
-      }
-
-      return this.renderedProfiles;
-    },
-  },
-  methods: {
-    fetchData() {
-      fetchProfiles()
-        .then((result) => {
-          this.allProfiles = result;
-          this.renderedProfiles.push(...this.allProfiles.slice(0, PROFILES_PER_PAGE));
-        });
-    },
-    loadMore() {
-      setTimeout(() => {
-        const startIndex = this.page * PROFILES_PER_PAGE;
-        const endIndex = startIndex + PROFILES_PER_PAGE - 1;
-        this.renderedProfiles.push(...this.allProfiles.slice(startIndex, endIndex));
-        this.page += 1;
-      }, 50);
-    },
-    searchStringFoundInProfile(profile, searchString) {
-      const regex = new RegExp(searchString.toUpperCase(), 'g');
-      return JSON.stringify(profile).toUpperCase().match(regex);
-    },
+    profiles: Array,
+    onChangePage: Function,
   },
 };
 </script>

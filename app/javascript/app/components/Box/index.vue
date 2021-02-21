@@ -1,11 +1,16 @@
 <template>
   <div class="box">
     <SearchBox :initial-value="currentSearchString" :on-change="updateSearchString"/>
-    <ResultBox :search-string="currentSearchString"/>
+    <ResultBox
+        :search-string="currentSearchString"
+        :profiles="profiles"
+        :on-change-page="loadMore"
+    />
   </div>
 </template>
 
 <script>
+import fetchProfiles from 'app/api/profiles';
 import SearchBox from './SearchBox';
 import ResultBox from './ResultBox';
 
@@ -15,6 +20,8 @@ export default {
   data() {
     return {
       currentSearchString: '',
+      profiles: [],
+      page: 0,
     };
   },
   created() {
@@ -28,10 +35,28 @@ export default {
 
       this.currentSearchString = href.substring(index).replace('/search/', '');
     },
+    clearProfiles() {
+      this.page = 0;
+      this.profiles = [];
+    },
     updateSearchString(newValue) {
       const newPath = `/search/${newValue}`;
       window.history.pushState({}, '', newPath);
       this.currentSearchString = newValue;
+      this.clearProfiles();
+      this.getNextPage();
+    },
+    getNextPage() {
+      fetchProfiles(this.currentSearchString, this.page)
+        .then((profiles) => {
+          this.profiles.push(...profiles);
+          this.page += 1;
+        });
+    },
+    loadMore() {
+      setTimeout(() => {
+        this.getNextPage();
+      }, 50);
     },
   },
 };
