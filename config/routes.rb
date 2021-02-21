@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
-  get '/users', to: 'welcome#users'
+  root 'home#index'
+  get '/*path' => 'home#index'
 end
