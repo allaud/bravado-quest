@@ -11,7 +11,7 @@
         :highlight-text="highlightText"
     />
     <Divider/>
-    <Button label="MASK AS SUITABLE"/>
+    <Button label="MARK AS SUITABLE"/>
   </div>
 </div>
 </template>

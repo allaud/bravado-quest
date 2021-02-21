@@ -1,10 +1,11 @@
 <template>
 <div class="result-container" v-infinite-scroll="loadMore">
   <div class="results-wrapper">
-    <Profile v-for="profile in filteredProfiles"
-             :key="profile.email"
-             :profile="profile"
-             :highlight-text="searchString"
+    <Profile
+        v-for="profile in filteredProfiles"
+        :key="profile.email"
+        :profile="profile"
+        :highlight-text="searchString"
     />
   </div>
 </div>
