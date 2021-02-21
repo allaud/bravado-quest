@@ -35,7 +35,10 @@ export default {
   computed: {
     filteredProfiles() {
       if (this.searchString) {
-        return this.renderedProfiles.filter((profile) => this.searchStringFoundInProfile(profile, this.searchString));
+        return this.renderedProfiles.filter((profile) => this.searchStringFoundInProfile(
+          profile,
+          this.searchString,
+        ));
       }
 
       return this.renderedProfiles;
