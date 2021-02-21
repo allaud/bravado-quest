@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import fetchProfiles from 'app/api/profiles';
 import Profile from './Profile';
 
 export default {
